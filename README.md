@@ -1,4 +1,4 @@
-🫀 Unsupervised Learning – KMeans Clustering Project
+ Unsupervised Learning – KMeans Clustering Project
 
 📌 Project Overview  
 This project focuses on **clustering customer data** based on their annual income and spending score using **KMeans clustering**. The goal is to segment customers into meaningful groups, both by implementing KMeans from scratch and using Scikit-Learn’s optimized KMeans.  
