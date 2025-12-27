@@ -1,1 +1,32 @@
+# Makefile for Unsupervised Learning - KMeans Project
+
+# Variables
+VENV_NAME = my_venv
+PYTHON = $(VENV_NAME)/Scripts/python
+NOTEBOOK = kmeans_cluster.ipynb
+
+# Default target
+all: help
+
+# Run Jupyter Notebook
+notebook:
+	$(PYTHON) -m notebook $(NOTEBOOK)
+
+# Freeze installed packages into requirements.txt
+freeze:
+	$(VENV_NAME)/Scripts/pip freeze > requirements.txt
+	@echo "Requirements saved to requirements.txt"
+
+# Clean temporary files
+clean:
+	rm -rf __pycache__
+	find . -type d -name "*.ipynb_checkpoints" -exec rm -rf {} +
+	@echo "Cleaned temporary files."
+
+# Help message
+help:
+	@echo "Makefile commands:"
+	@echo "  make notebook      - Run the Jupyter notebook"
+	@echo "  make freeze        - Save installed packages to requirements.txt"
+	@echo "  make clean         - Remove temporary files"
 
